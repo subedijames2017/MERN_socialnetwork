@@ -22,7 +22,7 @@ mongoose
   .then(() => console.log("connected to databse"))
   .catch(err => console.log(err));
 //creating port for server
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 //passport middleware
 app.use(passport.initialize());
 

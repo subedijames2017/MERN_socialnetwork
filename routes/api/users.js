@@ -20,7 +20,7 @@ router.get("/test", (req, res) => res.json({ msg: "users test pass" }));
 
 //@route api/users/registration
 //Access  public
-router.post("/registration", (req, res) => {
+router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
