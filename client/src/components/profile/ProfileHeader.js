@@ -34,7 +34,7 @@ class ProfileHeader extends Component {
                     href={profile.website}
                     target="_blank"
                   >
-                    <i className="fab fa-globe fa-2x" />
+                    <i className="fa fa-facebook fa-2x" />
                   </a>
                 )}
 
@@ -44,7 +44,7 @@ class ProfileHeader extends Component {
                     href={profile.social.twitter}
                     target="_blank"
                   >
-                    <i className="fab fa-twitter fa-2x" />
+                      <i className="fa fa-twitter fa-2x" />
                   </a>
                 )}
 

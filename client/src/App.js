@@ -24,6 +24,8 @@ import {clearCurrentProfile} from './actions/profileAction';
 import jwt_decode from 'jwt-decode';
 import {logoutuser} from './actions/authAction'
 import Dashboard from './components/dashboard/Dashboard';
+import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 import NotFound from './components/not-found/NotFound';
 
 import './App.css';
@@ -93,6 +95,12 @@ class App extends Component {
                   path="/add-education"
                   component={AddEducation}
                 />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/feed" component={Posts} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch>
               <Route exact path="/not-found" component={NotFound} />
 
