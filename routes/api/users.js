@@ -29,7 +29,7 @@ router.post("/register", (req, res) => {
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
       errors.email = "Email already exists";
-      return res.status(400).json({ msg: errors });
+      return res.status(400).json(errors);
     } else {
       const avatar = gravatar.url(req.body.email, {
         s: "200", // Size
@@ -68,7 +68,8 @@ router.post("/login", (req, res) => {
   const password = req.body.password;
   User.findOne({ email }).then(user => {
     if (!user) {
-      return res.status(400).json({ email: "User not found" });
+      errors.email = "user not found";
+      return res.status(400).json(errors);
     } else {
       bcrypt.compare(password, user.password, (err, isMatch) => {
         if (err) throw err;
@@ -87,7 +88,8 @@ router.post("/login", (req, res) => {
             }
           );
         } else {
-          res.status(400).json({ msg: "passwprd not match" });
+          errors.password = "passwprd not match"
+          res.status(400).json(errors);
         }
       });
     }
